@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue Directives</title>
+</head>
+
+<body>
+    <main>
+        <h1 v-show="connected">I'm online (v-show)</h1>
+
+        <h2 v-if="connected">I'm online (v-if)</h2>
+
+        <p v-if="age < 18">You cannot enter.</p>
+        <p v-else-if="age > 200">You are inmortal!</p>
+        <p v-else>You can enter</p>
+
+        <template v-if="connected">
+            <p>I'm online (using template with v-if)</p>
+            <p>Welcome!</p>
+        </template>
+
+        <pre>{{$data}}</pre>
+    </main>
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
