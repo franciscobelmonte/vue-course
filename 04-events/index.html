@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue Events</title>
+</head>
+
+<body>
+    <main>
+        <ul>
+            <li v-for="task in tasks">{{task}}</li>
+        </ul>
+
+        <h2>With Vue</h2>
+        <input type="text" placeholder="Enter your new task" v-model="newTask" v-on:keyup.enter="addTaskWithVue()">
+        <input type="button" value="Add task" v-on:click="addTaskWithVue()">
+
+        <h2>With Vanilla Javascript</h2>
+        <input type="text" placeholder="Enter your new task">
+        <input type="button" value="Add task" onclick="addTask()">
+        <pre>{{$data}}</pre>
+    </main>
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
