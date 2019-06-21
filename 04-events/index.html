@@ -18,6 +18,12 @@
         <input type="text" placeholder="Enter your new task" v-model="newTask" v-on:keyup.enter="addTaskWithVue()">
         <input type="button" value="Add task" v-on:click="addTaskWithVue()">
 
+        <h2>With Vue using form</h2>
+        <form action="" v-on:submit.prevent="addTaskWithVue()">
+            <input type="text" placeholder="Enter your new task" v-model="newTask">
+            <input type="submit" value="Add task">
+        </form>
+
         <h2>With Vanilla Javascript</h2>
         <input type="text" placeholder="Enter your new task">
         <input type="button" value="Add task" onclick="addTask()">
