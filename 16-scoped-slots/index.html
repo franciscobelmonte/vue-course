@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue Scoped Slots</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <my-tasks :tasks="tasks">
+            <template slot="task" slot-scope="data">
+                <li>
+                    <h1>{{ data.title }}</h1>
+                </li>
+            </template>
+        </my-tasks>
+
+        <my-tasks :tasks="tasks">
+            <template slot="task" slot-scope="data">
+                <li>{{ data.title }}</li>
+            </template>
+        </my-tasks>
+
+        <my-tasks :tasks="tasks">
+            <template slot="task" slot-scope="data">
+                <li>🐱{{ data.title }}</li>
+            </template>
+        </my-tasks>
+
+        <pre>{{$data}}</pre>
+    </main>
+
+    <!-- Template -->
+    <template id="tasks-template">
+        <ul>
+            <slot name="task" v-for="task in tasks" :title="task.title"></slot>
+        </ul>
+    </template>
+
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
